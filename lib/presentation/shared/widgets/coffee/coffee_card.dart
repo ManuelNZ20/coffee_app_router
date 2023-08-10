@@ -76,11 +76,16 @@ class CardProduct extends StatelessWidget {
                 child: Stack(
                   children: [
                     Center(
-                      child: Image.asset(
-                        imgUrl,
-                        width: 180,
-                        height: categoryProduct==CategoryProduct.coffee?100:180,
-                        fit: BoxFit.contain,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 10.0
+                        ),
+                        child: Image.asset(
+                          imgUrl,
+                          width: 180,
+                          height: categoryProduct==CategoryProduct.coffee?100:170,
+                          fit: BoxFit.fitHeight,
+                        ),
                       ),
                     ),
                     Positioned(
