@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../shared/widgets/app_bar_coffee.dart';
+import '../../screens.dart';
+
 
 class CoffeeShopScreen extends StatelessWidget {
 
@@ -10,10 +11,14 @@ class CoffeeShopScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-    AppBarCoffee()
-      ],
+    return Scaffold(
+      body: const Stack(
+        children: [
+          AppBarCoffe(),
+          ContainerCoffeScreen(),
+        ],
+      ),
     );
   }
 }
+

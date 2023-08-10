@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AppBarCoffee extends StatelessWidget {
-  const AppBarCoffee({
+class AppBarCoffe extends StatelessWidget {
+  const AppBarCoffe({
     super.key,
   });
 
