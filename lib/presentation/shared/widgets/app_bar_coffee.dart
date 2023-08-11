@@ -14,7 +14,7 @@ class AppBarCoffe extends StatelessWidget {
         child: Image.asset(
           'assets/images/backgroundcoffee.jpg',
           width: size.width,
-          height: size.height * .4,
+          height: size.height * .45,
           fit: BoxFit.cover,
           color:Colors.black26,
           colorBlendMode: BlendMode.colorBurn,
@@ -40,18 +40,6 @@ class AppBarCoffe extends StatelessWidget {
               ),
             ),
           )),
-      // Align(
-      //   alignment: Alignment.bottomCenter,
-      //   child: Container(
-      //     decoration: BoxDecoration(
-      //         color: Color(0xFF543a20),
-      //         borderRadius: BorderRadius.only(
-      //           topRight: Radius.circular(50),
-      //           topLeft: Radius.circular(50),
-      //         )),
-      //     height: size.height * .75,
-      //   ),
-      // ),
     ]);
   }
 }

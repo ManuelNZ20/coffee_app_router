@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../screens.dart';
 
 
@@ -11,8 +10,8 @@ class CoffeeShopScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const Stack(
+    return const Scaffold(
+      body: Stack(
         children: [
           AppBarCoffe(),
           ContainerCoffeScreen(),

@@ -6,6 +6,7 @@ import 'package:coffee_app_routes/infrastructure/repositories/coffee_marker_repo
 import 'package:coffee_app_routes/infrastructure/repositories/coffee_repository_impl.dart';
 import 'package:coffee_app_routes/presentation/providers/coffee_marker_provider.dart';
 import 'package:coffee_app_routes/presentation/providers/coffee_provider.dart';
+import 'package:coffee_app_routes/presentation/providers/counter_order_provider.dart';
 import 'package:coffee_app_routes/presentation/providers/favorite_product_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -32,7 +33,8 @@ class MainApp extends StatelessWidget {
             create: (_) => CoffeeMarkerProvider(
                 coffeeMarkerRepository: coffeeMarkerRepository)
               ..addCoffeeMarkerData()),
-        ChangeNotifierProvider(create: (_) => MyAppState())
+        ChangeNotifierProvider(create: (_) => MyAppState()),
+        ChangeNotifierProvider(create: (_) => CounterOrderProvider()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

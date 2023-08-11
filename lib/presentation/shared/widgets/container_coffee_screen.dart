@@ -19,18 +19,17 @@ class ContainerCoffeScreen extends StatelessWidget {
       child: Container(
         clipBehavior: Clip.hardEdge,
           width: size.width,
-          height: size.height * .75,
+          height: size.height * .74,
           decoration: const BoxDecoration(
               color: Color(0xFF543a20),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(70), topRight: Radius.circular(70))),
           child: Padding(
             padding: const EdgeInsets.only(
-              left: 35.0,top: 20,right: 2
+              left: 2.0,top: 20,right: 2
             ),
             child: SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ContainerCategoryProduct(
                     title:'Espersso',

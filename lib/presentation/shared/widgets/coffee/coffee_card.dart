@@ -7,6 +7,7 @@ import 'package:coffee_app_routes/presentation/shared/widgets/title_container_co
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../providers/counter_order_provider.dart';
 
 class CardProduct extends StatelessWidget {
   const CardProduct(
@@ -27,7 +28,7 @@ class CardProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final bool isFavoriteProduct = ref.watch(isFavorite);
+    final counterProvider = context.watch<CounterOrderProvider>();
     final coffeeState = context.watch<MyAppState>();
     Icon icon;
     if (coffeeState.favorites.contains(name)) {
@@ -43,6 +44,7 @@ class CardProduct extends StatelessWidget {
     const decoration = BoxDecoration(color: Color(0xFFce9760));
     return GestureDetector(
       onTap: () {
+        counterProvider.reloadCounter();
         Navigator.push(context, MaterialPageRoute(builder: (context) {
           if (categoryProduct == CategoryProduct.coffee) {
             return DetailsProductScreen(
@@ -77,13 +79,13 @@ class CardProduct extends StatelessWidget {
                   children: [
                     Center(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 10.0
-                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 10.0),
                         child: Image.asset(
                           imgUrl,
                           width: 180,
-                          height: categoryProduct==CategoryProduct.coffee?100:170,
+                          height: categoryProduct == CategoryProduct.coffee
+                              ? 100
+                              : 170,
                           fit: BoxFit.fitHeight,
                         ),
                       ),

@@ -1,4 +1,6 @@
+import 'package:coffee_app_routes/presentation/providers/counter_order_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../title_container_coffee.dart';
 
 class CustomOrderButton extends StatelessWidget {
@@ -9,7 +11,7 @@ class CustomOrderButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
-
+    final counterOrderProvider = context.watch<CounterOrderProvider>();
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
@@ -21,20 +23,27 @@ class CustomOrderButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                counterOrderProvider.removeOrderProduct();
+              },
               icon: Icon(
                 Icons.remove_rounded,
                 color: colors.primary,
               )),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: TitleContainerCoffee(
-              text: '1',
-              fontSize: 24,
+          Container(
+            width: 60,
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Center(
+              child: TitleContainerCoffee(
+                text: '${counterOrderProvider.counter}',
+                fontSize: 24,
+              ),
             ),
           ),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                counterOrderProvider.addOrderProduct();
+              },
               icon: Icon(
                 Icons.add_rounded,
                 color: colors.primary,

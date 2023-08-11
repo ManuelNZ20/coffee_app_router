@@ -4,6 +4,4 @@ abstract class CoffeeDataSource {
 
   Future<List<Coffee>> getTrendingCoffee();
 
-
-
 }

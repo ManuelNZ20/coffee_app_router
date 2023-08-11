@@ -15,25 +15,30 @@ class ContainerCategoryProduct extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return SizedBox(
-      height: size.height * .5,
+      height: size.height * .46,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TitleContainerCoffee(
-            text: title,
-            fontSize: 24,
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 35.0,bottom: 15
+            ),
+            child: TitleContainerCoffee(
+              text: title,
+              fontSize: 24,
+            ),
           ),
           SizedBox(
-            height: size.height * .4,
+            height: size.height * .38,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount:product.length,
               itemBuilder: (context, index) {
                 final Product coffeeEntity = product[index];
                 return Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    //todo: agregar enum para identificar el tipo de clase a la entidad
                     CardProduct(
                       name: coffeeEntity.name,
                       caption: coffeeEntity.caption,
@@ -43,7 +48,7 @@ class ContainerCategoryProduct extends StatelessWidget {
                       categoryProduct: coffeeEntity.categoryProduct,
                     ),
                     const SizedBox(
-                      width: 25,
+                      width: 20,
                     )
                   ],
                 );
